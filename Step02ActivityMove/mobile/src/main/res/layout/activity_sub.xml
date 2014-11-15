@@ -1,3 +1,4 @@
+<!-- 상단의 화살표는 계층 구조 상의 상위 액티비티로 이동한다. -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
