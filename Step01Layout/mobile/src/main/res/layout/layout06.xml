@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="이미지를 출력합니다."
+        android:id="@+id/textView"
+        android:background="#00ff00"
+        android:gravity="center_horizontal"/>
+        <!-- gravity : 정렬 -->
+
+    <!-- height = 0, layout_weight 를 줘서 textview 와 버튼이 사용하는
+    공간외의 나머지 모두 사용 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/image1"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button16"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
