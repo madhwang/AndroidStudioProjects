@@ -10,6 +10,7 @@ import android.support.wearable.view.DismissOverlayView;
 import android.support.wearable.view.FragmentGridPagerAdapter;
 import android.support.wearable.view.GridViewPager;
 import android.support.wearable.view.ImageReference;
+import android.support.wearable.view.WatchViewStub;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
@@ -40,8 +41,9 @@ public class WearActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 
-/*
-		// activity_wear 를 사용해서 화면을 구성하는 경우
+		/*
+		 activity_wear 를 사용해서 화면을 구성하는 경우
+		  */
 		setContentView(R.layout.activity_wear);
 		final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
 		gDector = new GestureDetectorCompat(this,new LongPressListener());
@@ -64,11 +66,10 @@ public class WearActivity extends Activity {
 			}
 		});
 
-*/
-
 		/*
 		rect_activity_wear 를 사용해서 화면을 구성하는 경우
 		 */
+		/*
 		setContentView(R.layout.rect_activity_wear);
 		gDector = new GestureDetectorCompat(this,new LongPressListener());
 
@@ -82,6 +83,7 @@ public class WearActivity extends Activity {
 		mPager.setAdapter(mAdapter);
 
 		dismissView = (DismissOverlayView)findViewById(R.id.overlay);
+		*/
 	}
 
 	//커스텀 어댑터 객체를 만들 클래스 정의하기
@@ -150,14 +152,11 @@ public class WearActivity extends Activity {
 		}
 	}
 
-
 	//터치 이벤트를 잡는다.
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		return gDector.onTouchEvent(ev) || super.dispatchTouchEvent(ev);
 	}
-
-
 
 	//길게 눌렀을 때 실행되는 클래스
 	class LongPressListener extends GestureDetector.SimpleOnGestureListener{
