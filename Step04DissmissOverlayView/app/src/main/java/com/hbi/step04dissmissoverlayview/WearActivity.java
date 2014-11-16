@@ -1,6 +1,7 @@
 package com.hbi.step04dissmissoverlayview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.wearable.view.DismissOverlayView;
@@ -51,7 +52,8 @@ public class WearActivity extends Activity {
     //버튼을 눌렀을 때 호출되는 메서드
     public void moveActivity(View v)
     {
-
+		Intent intent = new Intent(this,SubActivity.class);
+		startActivity(intent);
     }
 
     //SimpleOneGestureListener 클래스를 상속 받아서 클래스를 정의한다.
