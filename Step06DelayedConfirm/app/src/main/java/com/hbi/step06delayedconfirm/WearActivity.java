@@ -41,8 +41,6 @@ public class WearActivity extends Activity implements DelayedConfirmationView.De
 
 	}
 
-
-
 	//타이머가 그냥 종료 되었을때 호출되는 메서드
 	@Override
 	public void onTimerFinished(View view) {
