@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WearActivity"
+    tools:deviceIds="wear_square"
+    android:id="@+id/rect_layout"
+    android:onClick="onLayoutClicked"
+    android:background="@drawable/rect_background">
+
+    <!-- RelativeLayout  에는  android:orientation  속성은 없다. -->
+
+    <TextView android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사각형 디바이스"
+        android:textColor="#ff0000"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
