@@ -36,12 +36,13 @@ public class WearActivity extends Activity {
 		Notification noti = new NotificationCompat.Builder(this)
 				.setContentTitle("알림제목")
 				.setContentText("내용...")
-				.setSmallIcon(R.drawable.ic_launcher)
+				.setSmallIcon(R.drawable.forest)
 				.setAutoCancel(true)
 				.build();
 
 		NotificationManagerCompat.from(this).notify(1,noti);
 
+		//종료
 		finish();
 
 	}
