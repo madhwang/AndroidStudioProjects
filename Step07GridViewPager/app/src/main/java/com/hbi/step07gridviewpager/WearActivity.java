@@ -16,6 +16,7 @@ public class WearActivity extends Activity {
 	int cols = 3;
 
 	GridViewPager mPager;
+	MyGridAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,12 @@ public class WearActivity extends Activity {
 
 				//필요한 객체의 참조값
 				mPager = (GridViewPager) findViewById(R.id.fragment_container);
+
+				//생성자의 인자로 FragmentManager 객체를 전달하면서 객체 생성하기
+				mAdapter = new MyGridAdapter(getFragmentManager());
+
+				//페이저와 어댑터 연결
+				mPager.setAdapter(mAdapter);
 			}
 		});
 
