@@ -6,14 +6,15 @@
     tools:context=".WearActivity"
     tools:deviceIds="wear_round"
     android:onClick="onLayoutClicked"
-    android:id="@+id/round_layout">
+    android:id="@+id/round_layout"
+    android:background="@drawable/round_background">
 
     <TextView android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="원형 레이아웃"
-        android:textSize="24sp"
+        android:text="@string/round_text"
+        android:textSize="@dimen/text_size"
         android:textColor="@color/red"/>
 </RelativeLayout>

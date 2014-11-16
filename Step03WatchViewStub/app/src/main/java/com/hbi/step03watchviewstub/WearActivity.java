@@ -14,8 +14,7 @@ public class WearActivity extends Activity {
     private TextView mTextView;
 
     //레이아웃의 참조값을 담은 멤버 필드
-    RelativeLayout rectLayout;
-    RelativeLayout roundLayout;
+    RelativeLayout rectLayout, roundLayout;
 
     // 액티비티가 활성화 될때 한번 호출되는 메서드
     @Override
@@ -37,6 +36,7 @@ public class WearActivity extends Activity {
             public void onLayoutInflated(WatchViewStub stub) {
 
                 rectLayout = (RelativeLayout)findViewById(R.id.rect_layout);
+                roundLayout = (RelativeLayout)findViewById(R.id.round_layout);
                 /*
                 mTextView = (TextView) stub.findViewById(R.id.text);
                 mTextView.setText("수정하였습니다.");
@@ -46,7 +46,7 @@ public class WearActivity extends Activity {
     }
 
 
-    //레이아웃을 클릭했을 때 호출되는 메소드
+    //레이아웃(배경)을 클릭(터치)했을 때 호출되는 메소드
     public void onLayoutClicked(View v)
     {
         if(rectLayout != null) //사각형 레이아웃이 설정 되었으면.
@@ -59,8 +59,12 @@ public class WearActivity extends Activity {
             ani.setRepeatCount(1);
             ani.setRepeatMode(Animation.REVERSE);
             rectLayout.startAnimation(ani);
-
         }
+        else if(roundLayout != null) //원형 레이아웃이 설정 되었으면,
+        {
 
+            //0.3초 동안 360도 회전하는 에니메이션 시작하기
+            roundLayout.animate().rotationBy(360).setDuration(300).start();
+        }
     }
 }

@@ -5,4 +5,9 @@
     <string name="hello_round">Hello Round World!</string>
     <string name="hello_square">Hello Square World!</string>
 
+    <string name="rect_text">사각형 레이아웃</string>
+    <string name="round_text">원형 레이아웃</string>
+
+
+
 </resources>
