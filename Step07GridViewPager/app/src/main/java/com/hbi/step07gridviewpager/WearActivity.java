@@ -65,13 +65,11 @@ public class WearActivity extends Activity {
 			return ContentFragment.newInstance(row,col);
 		}
 
-
 		//열의 개수를 리턴하는 메서드
 		@Override
 		public int getRowCount() {
 			return rows;
 		}
-
 
 		//행의 개수를 리턴하는 메서드
 		@Override
