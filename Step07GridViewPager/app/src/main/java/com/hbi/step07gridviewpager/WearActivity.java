@@ -9,6 +9,15 @@ import android.support.wearable.view.FragmentGridPagerAdapter;
 import android.support.wearable.view.GridViewPager;
 import android.support.wearable.view.WatchViewStub;
 
+
+/*
+    GridViewPager는  pager를 GridViewPagerAdapter로 부터 공급받는다.
+
+    GridViewPager : 사용자 터치에 반응하여 어느 영역이 보여져야 하는지 파악
+    GridViewPagerAdapter : 보여줘야할 데이터(Model)를 fragement 로 만들고
+                                     GridViewPager 로 부터 요청 받은 영역에 해당하는
+                                     데이터인 fragment를 GridViewPager에게 전달한다.
+ */
 public class WearActivity extends Activity {
 
 	//컬럼과 로우의 개수
