@@ -6,7 +6,8 @@ ListView에서의 셀 하나의 레이아웃
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:layout_gravity="center_vertical">
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"  >
 
 
     <ImageView
@@ -15,7 +16,6 @@ ListView에서의 셀 하나의 레이아웃
         android:layout_margin="16dp"
         android:layout_width="20dp"
         android:src="@drawable/wl_circle"/>
-
 
     <TextView
         android:id="@+id/time_text"
