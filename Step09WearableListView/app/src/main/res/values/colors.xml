@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    @color/wl_gray : XML 에서 참조시
+    R.color.wl_gray  : Java  에서 참조시
+    -->
+    <color name="wl_gray">#c1c1c1</color>
+    <color name="wl_blue">#2878ff</color>
+</resources>
