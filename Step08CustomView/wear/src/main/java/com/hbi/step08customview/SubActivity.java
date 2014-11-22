@@ -1,8 +1,10 @@
 package com.hbi.step08customview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,12 +13,14 @@ public class SubActivity extends Activity implements  MyUtil.Orientation {
 	TextView text_heading, text_pitch, text_rolling;
 	MyUtil.OrientationManager oriManager;
 	private LinearLayout subLayout;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		//화면 구성하기
 		setContentView(R.layout.rect_activity_sub);
+
 
 		//참조값 얻어와서 멤버 필드에 저장하기
 		text_heading = (TextView)findViewById(R.id.heading);
@@ -29,10 +33,18 @@ public class SubActivity extends Activity implements  MyUtil.Orientation {
 		oriManager.init(this,this);
 	}
 
+
 	@Override
 	protected void onStop() {
 		oriManager.release();
 		super.onStop();
+	}
+
+	public void move(View v)
+	{
+		//엑티비티를 이동할 인덴트 객체 생성하기
+		Intent intent = new Intent(this,TouchActivity.class);
+		startActivity(intent);
 	}
 
 	@Override

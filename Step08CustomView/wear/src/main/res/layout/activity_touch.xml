@@ -6,8 +6,8 @@
     android:id="@+id/watch_view_stub"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:rectLayout="@layout/rect_activity_wear"
-    app:roundLayout="@layout/round_activity_wear"
-    tools:context=".WearActivity"
+    app:rectLayout="@layout/rect_activity_touch"
+    app:roundLayout="@layout/round_activity_touch"
+    tools:context="com.hbi.step08customview.TouchActivity"
     tools:deviceIds="wear">
 </android.support.wearable.view.WatchViewStub>

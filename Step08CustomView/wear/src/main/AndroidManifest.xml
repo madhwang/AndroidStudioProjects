@@ -22,6 +22,10 @@
             android:name="com.hbi.step08customview.SubActivity"
             android:label="@string/title_activity_sub" >
         </activity>
+        <activity
+            android:name="com.hbi.step08customview.TouchActivity"
+            android:label="@string/title_activity_touch" >
+        </activity>
     </application>
 
 </manifest>

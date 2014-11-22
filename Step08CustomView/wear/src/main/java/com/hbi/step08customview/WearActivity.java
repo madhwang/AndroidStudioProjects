@@ -86,6 +86,9 @@ public class WearActivity extends Activity implements MyUtil.Orientation {
 	{
 		//센서값 받아오는 작업 해제하기
 		oriManager.release();
+
+		//CompassView 의 핸들러 메시지 제거하기
+		cView.handler.removeMessages(0);
 		super.onStop();
 	}
 

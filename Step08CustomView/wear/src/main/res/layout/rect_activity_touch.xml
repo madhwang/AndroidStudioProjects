@@ -4,35 +4,31 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.hbi.step08customview.SubActivity"
+              tools:context="com.hbi.step08customview.TouchActivity"
               tools:deviceIds="wear_square"
               android:gravity="center"
-            android:id="@+id/subLayout">
+              android:clickable="true"
+              android:focusableInTouchMode="true">
 
     <TextView
+        android:id="@+id/eventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="heading"
-        android:id="@+id/heading"/>
+        android:text="이벤트명"
+        />
 
     <TextView
+        android:id="@+id/x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="pitch"
-        android:id="@+id/pitch"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="rolling"
-        android:id="@+id/rolling"/>
+        android:text="X좌표"
+        />
 
-    <Button
+    <TextView
+        android:id="@+id/y"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="터치이벤트"
-        android:onClick="move" />
+        android:text="Y좌표"
+        />
 
 </LinearLayout>
