@@ -6,7 +6,5 @@
     android:id="@+id/list_view"
     android:scrollbars="none"
     android:dividerHeight="0dp">
-
-
 </android.support.wearable.view.WearableListView>
 
