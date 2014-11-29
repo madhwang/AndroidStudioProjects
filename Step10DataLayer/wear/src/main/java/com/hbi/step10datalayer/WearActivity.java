@@ -13,6 +13,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.MessageApi;
 import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.Wearable;
+import com.hbi.mylibrary.Util;
 
 public class WearActivity extends Activity
 	implements GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener,MessageApi.MessageListener
@@ -25,6 +26,10 @@ public class WearActivity extends Activity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wear);
+
+		//화면이 켜진 상태로 유지하기
+		Util.keepScreenOn(this);
+
 		final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
 		stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
 			@Override
@@ -52,7 +57,7 @@ public class WearActivity extends Activity
 	protected void onStop() {
 		//액티비티가 비활성화 될때 마무리 작업을 한다.
 		gClient.disconnect();
-		Wearable.MessageApi.removeListener(gClient,this);
+		Wearable.MessageApi.removeListener(gClient, this);
 
 		super.onStop();
 	}
