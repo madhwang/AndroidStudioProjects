@@ -14,8 +14,9 @@
         android:id="@+id/inputText"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="send"/>
+        android:layout_height="wrap_content"
+        android:onClick="send"
+        android:text="전송"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"

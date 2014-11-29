@@ -5,11 +5,13 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               tools:context=".WearActivity"
-              tools:deviceIds="wear_square">
+              tools:deviceIds="wear_square"
+              android:gravity="center">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_square"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/console"
+        android:editable="false"
+        android:focusable="false" />
 </LinearLayout>
