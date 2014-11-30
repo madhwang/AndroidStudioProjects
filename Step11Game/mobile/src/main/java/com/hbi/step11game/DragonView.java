@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.hbi.mylibrary.Util;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -54,7 +56,10 @@ public class DragonView extends View{
     Random ran=new Random();
 
     int scrollSpeed;
+
     //SoundManager 객체의 참조값
+	Util.SoundManager sManager;
+
 
     //생성자
     public DragonView(Context context) {
@@ -149,10 +154,8 @@ public class DragonView extends View{
             enemyX[i]=x;
         }
         //적기 이미지 읽어들이기
-        Bitmap yellowE=BitmapFactory
-                .decodeResource(getResources(), R.drawable.juck1);
-        Bitmap whiteE=BitmapFactory
-                .decodeResource(getResources(), R.drawable.juck2);
+        Bitmap yellowE=BitmapFactory.decodeResource(getResources(), R.drawable.juck1);
+        Bitmap whiteE=BitmapFactory.decodeResource(getResources(), R.drawable.juck2);
         //크기를 스케일링해서 배열에 저장하기
         yellowE = Bitmap.createScaledBitmap(yellowE, enemyW, enemyH, false);
         whiteE = Bitmap.createScaledBitmap(whiteE, enemyW, enemyH, false);
@@ -163,7 +166,11 @@ public class DragonView extends View{
 
         scrollSpeed = viewHeight / 300;
 
-        handler.sendEmptyMessageDelayed(0, 50);
+	    //SoundManager 객체의 참조값 얻어오기
+	    sManager = Util.SoundManager.getInstance();
+
+	    //아래 라인을 주석처리하면 처음부터 시작되지 않는다.
+        //handler.sendEmptyMessageDelayed(0, 50);
     }
 
     //View 를 렌더링하는 메소드
@@ -217,7 +224,7 @@ public class DragonView extends View{
                     shipY < e.getY() + enemyHalfH ;
 
             if(isDragonDie){
-
+	            sManager.play(MainActivity.SOUND_DIE);
                 //핸들러 메세지 제거
                 handler.removeMessages(0);
             }
@@ -252,7 +259,7 @@ public class DragonView extends View{
                     if(currentEnergy <= 0){ //적기의 에너지가 백피라면
                         e.setDead(true); //적기 제거
                     }
-
+					sManager.play(MainActivity.SOUND_SHOOT);
                 }
             }
 
@@ -347,6 +354,7 @@ public class DragonView extends View{
                 //배열에서 제거될수 있도록 표시한다.
                 tmp.setDead(true);
             }
+	        sManager.play(MainActivity.SOUND_LASER);
         }
     }
 
@@ -394,6 +402,11 @@ public class DragonView extends View{
     //터치 이벤트 처리하기
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+
+	    if(isGamming == false) //게임 중이 아니라면 리턴한다.
+	    {
+		    return  false;
+	    }
 
         //이벤트가 일어난곳의 x 좌표 얻어오기
         int eventX = (int)event.getX();

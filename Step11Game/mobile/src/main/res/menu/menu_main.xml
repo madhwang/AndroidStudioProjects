@@ -5,4 +5,14 @@
           android:title="@string/action_settings"
           android:orderInCategory="100"
           android:showAsAction="never"/>
+
+    <item android:id="@+id/startGame"
+          android:title="startGame"
+          android:orderInCategory="1"
+          android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/pauseGame"
+          android:title="pauseGame"
+          android:orderInCategory="2"
+          android:showAsAction="ifRoom"/>
 </menu>
