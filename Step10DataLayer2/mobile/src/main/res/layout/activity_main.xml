@@ -21,10 +21,17 @@
             android:onClick="startWear" />
 
         <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="썸네일촬영"
+        android:onClick="takePhoto" />
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="사진찍기"
-            android:onClick="takePhoto" />
+            android:text="원본촬영"
+            android:onClick="takePhoto2" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,13 +40,14 @@
         </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:id="@+id/imageView"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:id="@+id/console"
         android:editable="false"
         android:focusable="false"
