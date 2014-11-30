@@ -3,6 +3,8 @@ package com.hbi.step11game;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -119,11 +121,36 @@ public class MainActivity extends Activity  implements  GoogleApiClient.OnConnec
 		{
 			if(event.getType() == DataEvent.TYPE_CHANGED)
 			{
-				//path를 읽어온다.
+				//path를 읽어온다. "/left" 또는 "/right"
 				String path = event.getDataItem().getUri().getPath();
+				Message m = new Message();
+				m.obj = path;
+
+				//UI 스레드가 아니므로 핸들러에 메시지를 보내서 처리되도록 한다.
+				handler.sendMessage(m);
 			}
 		}
 	}
+
+	Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+
+			//메시지에 담긴 path 를 읽어온다.
+			String path = (String)msg.obj;
+
+			//DragonView에 전달한다.
+			if(path.equals("/left"))
+			{
+				dView.moveLeft();
+			}
+			else if(path.equals("/right"))
+			{
+				dView.moveRight();
+			}
+
+		}
+	};
 
 
 	/**

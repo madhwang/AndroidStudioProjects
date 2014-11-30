@@ -434,10 +434,33 @@ public class DragonView extends View{
 
                 break;
         }
-
-
         return true;
     }
+
+	/**
+	 * 왼쪽으로 움직이는 메서드
+	 */
+	public void moveLeft()
+	{
+		 shipX -= 20;
+		if(shipX <= 0)
+		{
+			shipX = 0;
+		}
+	}
+
+	/**
+	 * 오른쪽으로 움직이는 메서드
+	 */
+	public void moveRight()
+	{
+		 shipX += 20;
+		if (shipX >= viewWidth)
+		{
+			shipX = viewWidth;
+		}
+	}
+
 
     //화면을 주기적으로 갱신해주기 위한 핸들러 객체 정의하기
     Handler handler=new Handler(){
