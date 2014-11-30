@@ -354,7 +354,6 @@ public class DragonView extends View{
                 //배열에서 제거될수 있도록 표시한다.
                 tmp.setDead(true);
             }
-	        sManager.play(MainActivity.SOUND_LASER);
         }
     }
 

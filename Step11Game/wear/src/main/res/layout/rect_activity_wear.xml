@@ -3,13 +3,26 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               tools:context=".WearActivity"
-              tools:deviceIds="wear_square">
+              tools:deviceIds="wear_square"
+              android:gravity="center">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_square"/>
+        android:layout_weight="1"
+        android:text="Left"
+        android:textSize="20sp"
+        android:onClick="moveLeft"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Right"
+        android:textSize="20sp"
+        android:onClick="moveRight"/>
+
 </LinearLayout>
