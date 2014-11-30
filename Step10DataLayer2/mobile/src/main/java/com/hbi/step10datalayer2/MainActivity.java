@@ -97,7 +97,10 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
 		printLog("onConnectionFailed()");
 	}
 
-	//로그 출력하는 메서드
+	/**
+	 * 로그 출력하는 메서드
+	 * @param msg
+	 */
 	public void printLog(String msg)
 	{
 		Message m = new Message();
@@ -187,7 +190,6 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
 			//ImageView 에 Bitmap 이미지 출력하기
 			resultImage.setImageBitmap(imageBitmap);
 		}
-
 	}
 
 	/**
